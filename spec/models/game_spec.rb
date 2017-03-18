@@ -18,5 +18,32 @@ RSpec.describe Game, type: :model do
   describe "#initialize_defaults" do
     it{expect(Game.new.board).to eq(Boards::DefaultState)}
   end
+  
+  describe "#place_token" do
+    Boards::ColPickExpectations.each do |column, pick|
 
+      context "on player_one's turn" do
+        let!(:game) { build(:game, token_col: 1) }
+
+        before { game.board[0] = column }
+
+        it "should place token 1 at the specified col at the next available position" do
+          expect(game.column[pick]).to eq(0)
+          game.place_token
+          expect(game.column[pick]).to eq(1)
+        end
+      end
+
+    end
+  end
+
+  describe "#token" do
+    context "when player_one_turn is true" do
+      it{expect(Game.new(player_one_turn: true).token).to eq(1)}
+    end
+
+    context "when player_one_turn is false" do
+      it{expect(Game.new(player_one_turn: false).token).to eq(2)}
+    end
+  end
 end

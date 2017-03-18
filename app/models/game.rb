@@ -16,9 +16,25 @@
 class Game < ApplicationRecord
   serialize :board, Array
 
-  attr_accessor :token_col, :token_row
+  attr_accessor :token_col
 
   after_initialize :initialize_defaults, :if => :new_record?
+
+  def place_token
+    column[pick] = token
+  end
+
+  def pick
+    column.index(0)
+  end
+
+  def column
+    self.board[token_col - 1]
+  end
+
+  def token
+    player_one_turn ? 1 : 2
+  end
 
   private
 

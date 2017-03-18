@@ -13,10 +13,13 @@
 
 FactoryGirl.define do
   factory :game do
-    board "MyText"
     player_one_turn true
     finsihed false
-    winner nil
+    winner 0
+
+    trait :player_two_turn do
+      player_one_turn false
+    end
 
     trait :player_one_win do
       winner 1
