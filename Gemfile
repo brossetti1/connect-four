@@ -34,10 +34,21 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # Use RSpec for specs
+  gem 'rspec-rails', '~> 3.5'
+  # Use Factory Girl for generating random test data
+  gem 'factory_girl_rails'
+
+  gem 'awesome_print' # adds style to pry print out- we can remove this one if its too different for anyone
+  gem 'pry-rails' # Debugging
+  gem 'pry-byebug' # adds step, next, finish, continue, and breakpoint commands to pry
+  gem 'pry-rescue' # run your server with rescue to open pry on any error 'bundle exec rescue rails s'
+  gem 'faker'
 end
 
 group :development do
