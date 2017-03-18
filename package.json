@@ -1,0 +1,22 @@
+{
+  "name": "connect4",
+  "version": "1.0.0",
+  "description": "connect4 demo in rails and react",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brossetti1/connect-four.git"
+  },
+  "author": "Brian Rossetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brossetti1/connect-four/issues"
+  },
+  "homepage": "https://github.com/brossetti1/connect-four#readme"
+}
