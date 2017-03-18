@@ -11,6 +11,13 @@ module.exports = {
     path: path.join('app', 'assets', 'javascripts', 'react'),
     filename: "connect4_bundle.js",
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      "process.env": { 
+        NODE_ENV: JSON.stringify("production") 
+      }
+    })
+  ],
   module: {
     loaders: [
       {
