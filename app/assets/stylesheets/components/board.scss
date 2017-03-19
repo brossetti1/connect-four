@@ -4,7 +4,6 @@
 }
 
 .board__row {
-  background-color: green;
   display: flex;
   min-height: 100px;
   width: 100%;
@@ -13,7 +12,16 @@
 
 .board__column-selector {
   flex: 1 1 100%;
-  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board__column-selector:hover:after {
+  position: absolute;
+  margin: 0 auto;
+  content: "👇";
+  font-size: 50px;
 }
 
 .board__columns-container {
