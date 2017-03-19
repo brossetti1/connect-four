@@ -40,7 +40,7 @@ class Game < ApplicationRecord
   end
 
   def column
-    self.board[token_col - 1]
+    self.board[typecasted_token_col - 1]
   end
 
   def token
@@ -52,6 +52,13 @@ class Game < ApplicationRecord
   end
 
   private
+
+  # token_col is coming from params - string
+  # therefore accessing token_col should be called from this method
+  # this ensures validation process while also returning the index as an integer
+  def typecasted_token_col
+    token_col.to_i
+  end
 
   def validate_pick_exists!
     if token_column_index_nil?
