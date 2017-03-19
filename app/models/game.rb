@@ -21,6 +21,12 @@ class Game < ApplicationRecord
   after_initialize :initialize_defaults, :if => :new_record?
   validates :token_col, presence: true
 
+  def process_move
+    place_token
+    change_player
+    self.tap {|game| game.save}
+  end
+
   def place_token
     column[pick] = token
   end

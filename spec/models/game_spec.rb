@@ -19,6 +19,15 @@ RSpec.describe Game, type: :model do
   describe "#initialize_defaults" do
     it{expect(game.board).to eq(Boards::DefaultState)}
   end
+
+  describe "#process_move" do
+    it "should place a token and change a player" do
+      expect(game).to receive(:place_token).once
+      expect(game).to receive(:change_player).once
+
+      expect{game.process_move}.to change(game, :player_one_turn).from(true).to(false)
+    end
+  end
   
   describe "#place_token" do
     Boards::ColPickExpectations.each do |column, pick|
