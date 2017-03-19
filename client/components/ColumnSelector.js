@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ColumnSelectorRow extends React.Component {
+export default class ColumnSelector extends React.Component {
 
   render() {
     return (
