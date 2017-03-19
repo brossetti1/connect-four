@@ -1,34 +1,38 @@
 .board__container {
-  padding: 0 250px;
+  padding: 0 350px;
+  min-height: 600px;
 }
 
 .board__row {
   background-color: green;
   display: flex;
-  flex-flow: row;
-  height: 100px;
+  min-height: 100px;
   width: 100%;
   justify-content: center;
 }
 
 .board__column-selector {
-  flex: 1 1 100px;
+  flex: 1 1 100%;
   border: 1px solid red;
 }
 
 .board__columns-container {
   display: flex;
-  min-height: 450px;
+  min-height: 500px;
+  border: 6px solid $peter-river-blue;
 }
 
 .board__column {
   flex: 1 1 100%;
-  border: 1px solid red;
+  background-color: $peter-river-blue;
+  border: 6px solid $peter-river-blue;
   display: flex;
   flex-flow: column;
 }
 
 .board__column-row {
   flex: 1 1 100%;
-  border: 1px solid blue;
+  background-color: $off-white;
+  border: 6px solid $peter-river-blue;
+  border-radius: 50%;
 }
