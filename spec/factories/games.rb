@@ -17,6 +17,17 @@ FactoryGirl.define do
     finsihed false
     winner 0
 
+    before(:create) do |game|
+      game.token_col = 1
+    end
+
+    trait :with_first_move_played do
+      after(:create) do |game|
+        game.token_col = 1
+        game.process_move
+      end
+    end
+
     trait :player_two_turn do
       player_one_turn false
     end
