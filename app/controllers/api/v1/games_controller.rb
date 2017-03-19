@@ -6,36 +6,35 @@ module Api
 
       def create
         @game.token_col = params[:token_col]
+
         if @game.valid? && @game.process_move
-          render json: @game  
+          render json: @game, status: :created
         else
-          flash[:error] = @game.errors.full_messages.join(", ")
-          render json: @game
+          render json: { errors: @game.errors }, status: :unprocessable_entity
         end
       end
-    end
 
-    def update
-      if @game.valid? && @game.process_move
-        render json: @game  
-      else
-        render json: @game
-        flash[:error] = @game.errors.full_messages.join(", ")
+      def update
+        if @game.valid? && @game.process_move
+          render json: @game, status: :created
+        else
+          render json: { errors: @game.errors }, status: :unprocessable_entity
+        end
       end
-    end
 
-    private
+      private
 
-    def build_game
-      @game = Game.new(player_one_turn: first_pick)
-    end
+      def build_game
+        @game = Game.new(player_one_turn: first_pick)
+      end
 
-    def set_game
-      @game = Game.find(params[:id]).tap {|game| game.token_col = params[:token_col]}
-    end
+      def set_game
+        @game = Game.find(params[:id]).tap {|game| game.token_col = params[:token_col]}
+      end
 
-    def first_pick
-      params[:player_one_turn] || true
+      def first_pick
+        params[:player_one_turn] || true
+      end
     end
   end
 end
