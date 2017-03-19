@@ -19,6 +19,7 @@ class Game < ApplicationRecord
   attr_accessor :token_col
 
   after_initialize :initialize_defaults, :if => :new_record?
+  validates :token_col, presence: true
 
   def place_token
     column[pick] = token
@@ -26,6 +27,10 @@ class Game < ApplicationRecord
 
   def pick
     column.index(0)
+  end
+
+  def colunn_index_exists_for_token?
+    !pick.nil?
   end
 
   def column
@@ -36,9 +41,21 @@ class Game < ApplicationRecord
     player_one_turn ? 1 : 2
   end
 
+  def change_player
+    player_one_turn? ? self.player_one_turn = false : self.player_one_turn = true
+  end
+
   private
 
+  # DEFAULT BOARD
+  # [0,0,0,0,0,0,0]
+  # [0,0,0,0,0,0,0]
+  # [0,0,0,0,0,0,0]
+  # [0,0,0,0,0,0,0]
+  # [0,0,0,0,0,0,0]
+  # [0,0,0,0,0,0,0]
+
   def initialize_defaults
-    self.board = 7.times.map {[0,0,0,0,0,0]}
+    self.board = 6.times.map {[0,0,0,0,0,0,0]}
   end
 end
