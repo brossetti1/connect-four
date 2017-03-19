@@ -1,0 +1,47 @@
+.board__container {
+  padding: 0 350px;
+  min-height: 600px;
+}
+
+.board__row {
+  display: flex;
+  min-height: 100px;
+  width: 100%;
+  justify-content: center;
+  cursor: none;
+}
+
+.board__column-selector {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.board__column-selector:hover:after {
+  position: absolute;
+  margin: 0 auto;
+  content: "👇";
+  font-size: 50px;
+}
+
+.board__columns-container {
+  display: flex;
+  min-height: 500px;
+  border: 6px solid $peter-river-blue;
+}
+
+.board__column {
+  flex: 1 1 100%;
+  background-color: $peter-river-blue;
+  border: 6px solid $peter-river-blue;
+  display: flex;
+  flex-flow: column;
+}
+
+.board__column-row {
+  flex: 1 1 100%;
+  background-color: $off-white;
+  border: 6px solid $peter-river-blue;
+  border-radius: 50%;
+}

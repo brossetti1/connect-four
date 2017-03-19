@@ -1,0 +1,9 @@
+.players__container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.players__turn {
+  font-size: 40px;
+  align-self: center;
+}
