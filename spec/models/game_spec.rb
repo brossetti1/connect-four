@@ -14,10 +14,19 @@
 require 'rails_helper'
 
 RSpec.describe Game, type: :model do
-  let!(:game) {build(:game, token_col: 1)}
+  let(:game) {build(:game, token_col: 1)}
   
   describe "#initialize_defaults" do
     it{expect(game.board).to eq(Boards::DefaultState)}
+  end
+
+  describe "#process_move" do
+    let!(:game) {create(:game, token_col: 1)}
+    it "should place a token and change a player" do
+      expect(game).to receive(:place_token).once
+
+      expect{game.process_move}.to change(game, :player_one_turn).from(true).to(false)
+    end
   end
   
   describe "#place_token" do
@@ -63,22 +72,24 @@ RSpec.describe Game, type: :model do
     end
   end
 
-  describe "colunn_index_exists_for_token?" do
+  describe "token_column_index_nil?" do
     context "when the next index exists" do
       before do
-        allow(game).to receive(:column) { [1,1,2,2,0,0,0] }
+        allow(game).to receive(:column) { [1,1,2,2,1,1,2] }
       end
 
-      it{expect(game.colunn_index_exists_for_token?).to eq(true)}
+      it{expect(game.token_column_index_nil?).to eq(true)}
+      it{expect(game.valid?).to be_falsey}
     end
 
     context "when the next index does not exist" do
 
       before do
-        allow(game).to receive(:column) { [1,1,2,2,1,1,2] }
+        allow(game).to receive(:column) { [1,1,2,2,0,0,0] }
       end
 
-      it{expect(game.colunn_index_exists_for_token?).to eq(false)}
+      it{expect(game.token_column_index_nil?).to eq(false)}
+      it{expect(game.valid?).to be_truthy}
     end
   end
     
