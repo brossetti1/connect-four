@@ -6,24 +6,22 @@ module Api
 
       def create
         @game.token_col = params[:token_col]
-        if @game.valid?
-          @game.process_move
+        if @game.valid? && @game.process_move
+          render json: @game  
         else
           flash[:error] = @game.errors.full_messages.join(", ")
+          render json: @game
         end
-
-        render json: @game
       end
     end
 
     def update
-      if @game.valid?
-        @game.process_move
+      if @game.valid? && @game.process_move
+        render json: @game  
       else
+        render json: @game
         flash[:error] = @game.errors.full_messages.join(", ")
       end
-
-      render json: @game
     end
 
     private

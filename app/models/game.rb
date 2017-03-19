@@ -11,20 +11,20 @@
 #  updated_at      :datetime         not null
 #
 
-
-
 class Game < ApplicationRecord
   serialize :board, Array
 
   attr_accessor :token_col
 
-  after_initialize :initialize_defaults, :if => :new_record?
+  after_initialize :initialize_defaults, if: :new_record?
+
   validates :token_col, presence: true
+  validate :validate_pick_exists!
 
   def process_move
     place_token
     change_player
-    self.tap {|game| game.save}
+    self.save
   end
 
   def place_token
@@ -35,8 +35,8 @@ class Game < ApplicationRecord
     column.index(0)
   end
 
-  def colunn_index_exists_for_token?
-    !pick.nil?
+  def token_column_index_nil?
+    pick.nil?
   end
 
   def column
@@ -52,6 +52,12 @@ class Game < ApplicationRecord
   end
 
   private
+
+  def validate_pick_exists!
+    if token_column_index_nil?
+      errors.add(:base, "column #{token_col} has no picks left, choose another column please.")
+    end
+  end
 
   # DEFAULT BOARD
   # [0,0,0,0,0,0,0]
