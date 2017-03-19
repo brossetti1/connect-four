@@ -4,13 +4,13 @@ class Column extends React.Component {
 
   render() {
     return (
-      <div className="column">
-        <div className="column__row"></div>
-        <div className="column__row"></div>
-        <div className="column__row"></div>
-        <div className="column__row"></div>
-        <div className="column__row"></div>
-        <div className="column__row"></div>
+      <div className="board__column">
+        <div className="board__column-row"></div>
+        <div className="board__column-row"></div>
+        <div className="board__column-row"></div>
+        <div className="board__column-row"></div>
+        <div className="board__column-row"></div>
+        <div className="board__column-row"></div>
       </div>
     );
   }

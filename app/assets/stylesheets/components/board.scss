@@ -1,0 +1,34 @@
+.board__container {
+  padding: 0 250px;
+}
+
+.board__row {
+  background-color: green;
+  display: flex;
+  flex-flow: row;
+  height: 100px;
+  width: 100%;
+  justify-content: center;
+}
+
+.board__column-selector {
+  flex: 1 1 100px;
+  border: 1px solid red;
+}
+
+.board__columns-container {
+  display: flex;
+  min-height: 450px;
+}
+
+.board__column {
+  flex: 1 1 100%;
+  border: 1px solid red;
+  display: flex;
+  flex-flow: column;
+}
+
+.board__column-row {
+  flex: 1 1 100%;
+  border: 1px solid blue;
+}
