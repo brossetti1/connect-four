@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry-byebug' # adds step, next, finish, continue, and breakpoint commands to pry
   gem 'pry-rescue' # run your server with rescue to open pry on any error 'bundle exec rescue rails s'
   gem 'faker'
+  gem 'annotate'
 end
 
 group :development do
