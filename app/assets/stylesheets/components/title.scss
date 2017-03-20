@@ -1,8 +1,18 @@
 .header__container {
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
+  padding: 0px 80px;
+  justify-content: flex-end;
+  height: 50px;
 }
 
 .header__title {
+  align-self: center;
   font-weight: bold;
+  font-size: 50px;
+}
+
+.header__title span {
+  font-size: 100px;
+  color: $peter-river-blue;
 }

@@ -4,7 +4,10 @@ const Title = () => {
 
   return (
     <div className="header__container">
-      <h1 className="header__title">Connect 4</h1>
+      <h1 className="header__title">
+        Connect 
+        <span>4</span>
+      </h1>
     </div>
   );
 }
