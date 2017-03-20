@@ -1,5 +1,6 @@
 import React from 'react'
 import InlineEdit from 'react-edit-inline'
+import PlayerTurn from './PlayerTurn'
 
 export default class PlayerPanel extends React.Component {
 
@@ -7,8 +8,9 @@ export default class PlayerPanel extends React.Component {
     super(props);
     this.dataChanged = this.dataChanged.bind(this);
     this.state = {
-      player_one_name: 'Player One',
-      player_two_name: 'Player Two',
+      playerOneName: 'Player One',
+      playerTwoName: 'Player Two',
+      showTurn: false
     }
   }
 
@@ -17,36 +19,32 @@ export default class PlayerPanel extends React.Component {
   }
 
   render() {
-
     return(
       <div className="players__container">
         <div className="players__player-one">
           <InlineEdit
             className="players__name"
             activeClassName="players__editing"
-            text={this.state.player_one_name}
-            paramName="player_one_name"
+            text={this.state.playerOneName}
+            paramName="playerOneName"
             change={this.dataChanged}
           />
           <span>(click to edit)</span>
         </div>
           
-        <div className="players__turn">
-          <h3>Player One's turn</h3>
-          <span>👈</span>
-        </div>
+        <PlayerTurn />
 
-      <div className="players__player-two">
-        <InlineEdit
-          className="players__name"
-          activeClassName="players__editing"
-          text={this.state.player_two_name}
-          paramName="player_two_name"
-          change={this.dataChanged}
-        />
-        <span>(click to edit)</span>
+        <div className="players__player-two">
+          <InlineEdit
+            className="players__name"
+            activeClassName="players__editing"
+            text={this.state.playerTwoName}
+            paramName="playerTwoName"
+            change={this.dataChanged}
+          />
+          <span>(click to edit)</span>
+        </div>
       </div>
-    </div>
     )
   }
 }
