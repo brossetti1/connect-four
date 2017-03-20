@@ -12,7 +12,9 @@ this heroku instance includes my work over a 4 hour time period, the front end i
 
 `rspec spec --format documentation` for test suite
 
-initial ui - [[https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/initial-ui.png?token=AFuGFG1Acts5ZkaP-_myRhON5XYW-idGks5Y2Z-SwA%3D%3D]]
+initial ui: 
+
+![Initial UI](https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/initial-ui.png?token=AFuGFG1Acts5ZkaP-_myRhON5XYW-idGks5Y2Z-SwA%3D%3D)
 
 ####Staging
 [rails-react-connect4-staging](http://rails-react-connect4-staging.herokuapp.com/)
@@ -24,7 +26,9 @@ The staging instance represents additional hours I was able to devote to this pr
 
 `rspec spec --format documentation` for test suite
 
-current-ui - [[https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/current-ui.png?token=AFuGFD1FA2dH_qbaeSAYT-oZjmK3-UP9ks5Y2Z9-wA%3D%3D]]
+current-ui:
+
+![Cnitial UI](https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/current-ui.png?token=AFuGFD1FA2dH_qbaeSAYT-oZjmK3-UP9ks5Y2Z9-wA%3D%3D)
 
 ####WIP
 
