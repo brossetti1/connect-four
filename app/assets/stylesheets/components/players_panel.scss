@@ -18,3 +18,25 @@
   font-size: 40px;
   align-self: center;
 }
+
+.players__editing {
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.5s, border 0.5s;
+  border: solid 1px #707070;
+  box-shadow: 0 0 5px 1px #969696;
+  text-align: center; 
+  font-size: 28px;
+}
+
+.players__player-one, .players__player-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.players__name {
+  font-size: 28px;
+  font-weight: bold;
+}
