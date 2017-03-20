@@ -6,13 +6,14 @@ export default class PlayerPanel extends React.Component {
     return(
       <div className="players__container">
         <div className="players__player-one">
-          <h1>Player 1</h1>
+          <h1>Player One</h1>
         </div>
         <div className="players__turn">
-          <span> 👈 </span>
+          <h3>Player One's turn</h3>
+          <span>👈</span>
         </div>
         <div className="players__player-two">
-          <h1>Player 2</h1>
+          <h1>Player Two</h1>
         </div>
       </div>
     )

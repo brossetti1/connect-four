@@ -4,6 +4,17 @@
 }
 
 .players__turn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.players__turn h3 {
+  margin-bottom: 0px;
+}
+
+.players__turn span {
   font-size: 40px;
   align-self: center;
 }
