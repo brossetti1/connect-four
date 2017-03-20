@@ -28,8 +28,9 @@ export default class PlayerPanel extends React.Component {
             paramName="player_one_name"
             change={this.dataChanged}
           />
+          <span>(click to edit)</span>
         </div>
-
+          
         <div className="players__turn">
           <h3>Player One's turn</h3>
           <span>👈</span>
@@ -43,6 +44,7 @@ export default class PlayerPanel extends React.Component {
           paramName="player_two_name"
           change={this.dataChanged}
         />
+        <span>(click to edit)</span>
       </div>
     </div>
     )
