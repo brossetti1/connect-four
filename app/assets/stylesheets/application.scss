@@ -12,9 +12,12 @@
  *
  */
 
-@import "common/colors";
+@import "common/*";
 @import "components/*";
 
-body {
+@import url($font-url);
+
+body, input {
+  font-family: $font-family;
   background-color: $off-white;
 }
