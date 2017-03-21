@@ -44,7 +44,7 @@ The staging instance represents additional hours I was able to devote to this pr
 
 current-ui:
 
-![Cnitial UI](https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/current-ui.png?token=AFuGFD1FA2dH_qbaeSAYT-oZjmK3-UP9ks5Y2Z9-wA%3D%3D)
+![Cnitial UI](https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/current-ui.png?token=AFuGFDDm2UfiyinfFV_IdZzZgVeH0HvRks5Y2awTwA%3D%3D)
 
 * branch - `connect-react-api-WIP` - this branch represents work in progress when i decided to stop the excercise Sunday night. I did not get the react piece hooked up to the API but I was felt good about the direction I was going in. In between now and any technical interview, I would love to continue working through this branch to see this project through to completetion.
 
