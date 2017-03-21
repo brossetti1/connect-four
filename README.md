@@ -2,7 +2,23 @@
 
 objectives: https://docs.google.com/document/d/1ChozkkouQrRESGlvZYEM4sNAyks5mK-cAODGSKvgYjM/edit
 
-In attempting the above assignment, I created two seperate heroku instances and I have three branches that encompass my work on this project. 
+In attempting the above assignment, I created two seperate heroku instances and I have three branches that encompass my work on this project. At the start I envisioned hooking these principles and technologies together to create this application:
+
+* Rails -v 5.0.2 API using JSON-api specs to pass data - http://jsonapi.org/examples/ - at the moment I am passing a minimal amount of data to get the game moves in place, so there is only a basic implementation of the json-api spec.
+
+* CSS3 flexbox - I used this excercise get a better understanding of flexbox and relied on it heavily when creating the ui
+
+* rspec - the Rails app is accompanied by tests, I do not have much experience testing javascript so the React app is without tests
+
+* es6 - I have been learning more and more javascript as I continue my career as a backend developer. I absolutley love how es6 feels and although I did not get to much es6 javascript in the master and staging branches, the WIP branch has the start of implementing some es6 javascript into the app.
+
+* webpack - I used this project to get a better understanding of webpack to bundle front end assets into the asset-pipeline
+
+The heroku instances are running buildpacks in this order:
+
+-heroku/nodejs
+-https://github.com/jerrysu/heroku-buildpack-webpack
+-heroku/ruby
 
 ## Production
 [rails-react-connect4-production](http://rails-react-connect4.herokuapp.com/)
@@ -30,13 +46,7 @@ current-ui:
 
 ![Cnitial UI](https://raw.githubusercontent.com/brossetti1/connect-four/staging/doc/current-ui.png?token=AFuGFD1FA2dH_qbaeSAYT-oZjmK3-UP9ks5Y2Z9-wA%3D%3D)
 
-## WIP
-
-* branch - `connect-react-api-WIP`
-
-I enjoyed this excercise and will continue to work through this branch to see what I end up with.
-
-
+* branch - `connect-react-api-WIP` - this branch represents work in progress when i decided to stop the excercise Sunday night. I did not get the react piece hooked up to the API but I was felt good about the direction I was going in. In between now and any technical interview, I would love to continue working through this branch to see this project through to completetion.
 
 ## Development dependencies:
 
@@ -53,4 +63,10 @@ node
 * `bundle install`
 
 * `npm install --save`
+
+* run `npm run dev` in one terminal
+
+* run `rails s` || `rescue rails s` (for pry rescue)
+
+* localhost:3000 will load the app
 
