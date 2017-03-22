@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-export default class Title extends React.Component {
+const Title = () => {
 
-  render() {
-    return (
-      <div className="header__container">
-        <h1 className="header__title">HelloWorld</h1>
-      </div>
-    );
-  }
+  return (
+    <div className="header__container">
+      <h1 className="header__title">
+        Connect 
+        <span>4</span>
+      </h1>
+    </div>
+  );
 }
 
+export default Title
