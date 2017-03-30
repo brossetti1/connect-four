@@ -1,26 +1,29 @@
 import React from 'react'
 
 class Column extends React.Component {
+  constructor(props) {
+    super(props)
+  }
 
-  renderToken(index) {
-    if(this.props.column) {
-      if(this.props.column[index] == 1){
-        return "token-1"
-      } else if(this.props.column[index] == 2) {
-        return "token-2"
-      }
+  renderRow(index) {
+    if(this.props.column[0][index] === 1){
+      return(<div className={"board__column-row token-1"}></div>)
+    } else if(this.props.column[0][index] === 2) {
+      return(<div className={"board__column-row token-2"}></div>)
+    } else {
+      return(<div className={"board__column-row"}></div>)
     }
   }
 
   render() {
     return (
       <div className="board__column">
-        <div className={`board__column-row ${this.renderToken(1)}`}></div>
-        <div className={`board__column-row ${this.renderToken(2)}`}></div>
-        <div className={`board__column-row ${this.renderToken(3)}`}></div>
-        <div className={`board__column-row ${this.renderToken(4)}`}></div>
-        <div className={`board__column-row ${this.renderToken(5)}`}></div>
-        <div className={`board__column-row ${this.renderToken(6)}`}></div>
+        {this.renderRow(5)}
+        {this.renderRow(4)}
+        {this.renderRow(3)}
+        {this.renderRow(2)}
+        {this.renderRow(1)}
+        {this.renderRow(0)}
       </div>
     );
   }

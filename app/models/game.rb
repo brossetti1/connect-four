@@ -75,6 +75,6 @@ class Game < ApplicationRecord
   # [0,0,0,0,0,0,0]
 
   def initialize_defaults
-    self.board = 6.times.map {[0,0,0,0,0,0,0]}
+    self.board = 7.times.map {[0,0,0,0,0,0,0]}
   end
 end
