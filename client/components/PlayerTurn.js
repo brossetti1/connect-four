@@ -5,13 +5,6 @@ export default class playerTurn extends React.Component {
     super(props);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if(JSON.stringify(this.props.user) !== JSON.stringify(nextProps.user)) // Check if it's a new user, you can also use some unique, like the ID
-  //   {
-  //     this.updateUser();
-  //   }
-  // }
-
   render() {
     if(this.props.currentPlayer === 0) {
       return(

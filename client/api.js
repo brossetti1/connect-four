@@ -18,11 +18,10 @@ export const createGame = () => {
 export const selectColumn = (id, token_column) => {
 
   const query = qs.stringify({
-    id: id,
     token_col: token_column
   })
-  
-  return fetch(`${ApiBase}/games?${query}`, {
+
+  return fetch(`${ApiBase}/games/${id}?${query}`, {
     method: 'PUT',
     headers: {
       "Content-Type" : "application/json"

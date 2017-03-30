@@ -8,12 +8,10 @@ export default class ColumnSelector extends React.Component {
     this.updateBoard = this.updateBoard.bind(this);
   }
 
-  updateBoard() {
+  updateBoard(col) {
     // set the current token identifier
     const currentToken = this.props.currentPlayer == 1 ? 1 : 2
-
-    selectColumn(columnPick).then((response) => {
-      debugger
+    selectColumn(this.props.gameIdentifier, col).then((response) => {
       const currentPlayer = response.player_one_turn == true ? 1 : 2
       this.setState({
         currentPlayer: currentPlayer,
