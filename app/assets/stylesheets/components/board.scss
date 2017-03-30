@@ -3,13 +3,16 @@
   min-height: 600px;
 }
 
+.board__row-height {
+  min-height: 100px;
+  width: 100%;
+}
+
 .board__row {
   border: 1px dashed $midnight-blue;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  min-height: 100px;
-  width: 100%;
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;

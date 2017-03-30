@@ -8,20 +8,9 @@ export default class ColumnSelector extends React.Component {
     this.updateBoard = this.updateBoard.bind(this);
   }
 
-  updateBoard(col) {
-    // set the current token identifier
-    const currentToken = this.props.currentPlayer == 1 ? 1 : 2
-    selectColumn(this.props.gameIdentifier, col).then((response) => {
-      const currentPlayer = response.player_one_turn == true ? 1 : 2
-      this.setState({
-        currentPlayer: currentPlayer,
-      })
-    })
-  }
-
   render() {
     return (
-      <div className="board__row">
+      <div className="board__row board__row-height">
         <div className="board__column-selector" onClick={() => this.updateBoard(1)}></div>
         <div className="board__column-selector" onClick={() => this.updateBoard(2)}></div>
         <div className="board__column-selector" onClick={() => this.updateBoard(3)}></div>

@@ -1,6 +1,5 @@
 import React from 'react'
 import Title from './Title'
-import ColumnSelector from './ColumnSelector'
 import Board from './Board'
 import PlayerPanel from './PlayerPanel'
 import {createGame} from '../api'
@@ -14,7 +13,8 @@ export default class App extends React.Component {
     this.state = {
       gameIdentifier: 0,
       currentPlayer: 0,
-      tokenColumn: ''
+      tokenColumn: '',
+      board: []
     };
   }
 
@@ -27,7 +27,8 @@ export default class App extends React.Component {
       this.setState({
         currentPlayer: currentPlayer,
         showTurn: true,
-        gameIdentifier: gameIdentifier
+        gameIdentifier: gameIdentifier,
+        board: attributes.board
       })
     })
   }
@@ -36,13 +37,11 @@ export default class App extends React.Component {
     return (
       <div>
         <Title />
-        <div className="board__container">
-          <ColumnSelector 
-            currentPlayer={this.state.currentPlayer} 
-            gameIdentifier={this.state.gameIdentifier}
-          />
-          <Board />
-        </div>
+        <Board 
+        currentBoard={this.state.board} 
+        currentPlayer={this.state.currentPlayer} 
+        gameIdentifier={this.state.gameIdentifier}
+        showColumnSelector={this.state.showTurn}/>
         <PlayerPanel startGame={this.startGame} currentPlayer={this.state.currentPlayer}/>
       </div>
     )
