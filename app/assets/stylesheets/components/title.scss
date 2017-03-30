@@ -1,13 +1,20 @@
 .header__container {
   margin-top: 10px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
   padding: 0px 80px;
-  justify-content: flex-end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   height: 50px;
 }
 
 .header__title {
-  align-self: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+              -ms-grid-row-align: center;
+          align-self: center;
   font-weight: bold;
   font-size: 50px;
 }
