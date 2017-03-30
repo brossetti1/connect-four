@@ -5,9 +5,7 @@ module Api
       before_action :build_game, only: [:create]
 
       def create
-        @game.token_col = params[:token_col]
-
-        if @game.valid? && @game.process_move
+        if @game.save
           render json: @game, status: :created
         else
           render json: { errors: @game.errors }, status: :unprocessable_entity

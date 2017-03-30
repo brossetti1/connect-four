@@ -1,61 +1,44 @@
 import React from 'react'
-import {createGame} from '../api'
    
 export default class playerTurn extends React.Component {
   constructor(props) {
     super(props);
-    this.createGame = this.createGame.bind(this);
-  }
-  
-  
-  createGame() {
-    createGame().then((response) => {
-      debugger
-      const currentPlayer = response.player_one_turn == true ? 1 : 2
-      this.setState({
-        currentPlayer: currentPlayer,
-      })
-    })
   }
 
-  componentWillReceiveProps(nextProps) {
-    debugger
-    if(JSON.stringify(this.props.user) !== JSON.stringify(nextProps.user)) // Check if it's a new user, you can also use some unique, like the ID
-    {
-           this.updateUser();
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if(JSON.stringify(this.props.user) !== JSON.stringify(nextProps.user)) // Check if it's a new user, you can also use some unique, like the ID
+  //   {
+  //     this.updateUser();
+  //   }
+  // }
 
   render() {
-    if(this.props.showTurn) {
-      if(this.props.currentPlayer === 1) {
-        return(
-          <div className="players__turn">
-            <h3>Player One's turn</h3>
-            <span>
-              👉 
-              <span className="token-1"></span>
-              👈
-            </span>
-          </div>
-        )
-      }  
-      if(this.props.currentPlayer === 2){
-        return(
-          <div className="players__turn">
-            <h3>{this.props.player_two_name} turn</h3>
-            <span>
-              👉 
-              <span className="token-2"></span>
-              👈
-            </span>
-          </div>
-        )
-      }
-    } else {
+    if(this.props.currentPlayer === 0) {
       return(
         <div className="players__turn">
-          <button onClick={() => createGame()}>Start Game!</button>
+          <button onClick={() => this.props.startGame()}>Start Game!</button>
+        </div>
+      )
+    } else if (this.props.currentPlayer === 1) {
+      return(
+        <div className="players__turn">
+          <h3>{this.props.playerOneName}'s turn</h3>
+          <div className='player__wrapper'>
+            <span>👈</span>
+            <div className="token-1"></div>
+            <span>👈</span>
+          </div>
+        </div>
+      )
+    } else if (this.props.currentPlayer === 2) {
+      return(
+        <div className="players__turn">
+          <h3>{this.props.playerTwoName}'s turn</h3>
+          <div className='player__wrapper'>
+            <span>👉</span>
+            <div className="token-2"></div>
+            <span>👉</span>
+          </div>
         </div>
       )
     }

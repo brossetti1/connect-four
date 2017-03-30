@@ -1,3 +1,4 @@
 class GameSerializer < ActiveModel::Serializer
-  attributes :id, :board, :player_one_turn, :finsihed, :winner
+  attribute  :player_one_turn, key: :playerOneTurn
+  attributes :id, :board, :finsihed, :winner
 end

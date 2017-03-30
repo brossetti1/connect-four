@@ -10,7 +10,6 @@ export default class PlayerPanel extends React.Component {
     this.state = {
       playerOneName: 'Player One',
       playerTwoName: 'Player Two',
-      showTurn: false
     }
   }
 
@@ -30,9 +29,14 @@ export default class PlayerPanel extends React.Component {
             change={this.dataChanged}
           />
           <span>(click to edit)</span>
+          <div className="player__identifier token-1"></div>
         </div>
-          
-        <PlayerTurn />
+
+        <PlayerTurn 
+          startGame={this.props.startGame} 
+          currentPlayer={this.props.currentPlayer}
+          playerOneName={this.state.playerOneName}
+          playerTwoName={this.state.playerTwoName}/>
 
         <div className="players__player-two">
           <InlineEdit
@@ -43,6 +47,7 @@ export default class PlayerPanel extends React.Component {
             change={this.dataChanged}
           />
           <span>(click to edit)</span>
+          <div className="player__identifier token-2"></div>
         </div>
       </div>
     )

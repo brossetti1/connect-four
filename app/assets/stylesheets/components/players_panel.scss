@@ -15,9 +15,21 @@
   margin-bottom: 0px;
 }
 
+.player__wrapper {
+  display: flex;
+}
+
 .players__turn span {
   font-size: 40px;
   align-self: center;
+  padding: 10px;
+}
+
+.players__turn div.token-1,
+.players__turn div.token-2 {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
 }
 
 .players__editing {
@@ -40,6 +52,12 @@
 
 .players__player-one span, .players__player-two span {
   margin-top: 5px;
+}
+
+.player__identifier {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%
 }
 
 .players__name {

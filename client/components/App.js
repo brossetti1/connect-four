@@ -3,17 +3,33 @@ import Title from './Title'
 import ColumnSelector from './ColumnSelector'
 import Board from './Board'
 import PlayerPanel from './PlayerPanel'
+import {createGame} from '../api'
 
 
 
 export default class App extends React.Component {
   constructor() {
     super();
+    this.startGame = this.startGame.bind(this)
     this.state = {
-      gameIdentifier: '',
-      currentPlayer: 1,
-      tokenColumn: '',
+      gameIdentifier: 0,
+      currentPlayer: 0,
+      tokenColumn: ''
     };
+  }
+
+  startGame() {
+    createGame().then((response) => {
+      const attributes     = response.data.attributes
+      const currentPlayer  = attributes["player-one-turn"] == true ? 1 : 2
+      const gameIdentifier = response.data.id
+  
+      this.setState({
+        currentPlayer: currentPlayer,
+        showTurn: true,
+        gameIdentifier: gameIdentifier
+      })
+    })
   }
 
   render() {
@@ -27,7 +43,7 @@ export default class App extends React.Component {
           />
           <Board />
         </div>
-        <PlayerPanel />
+        <PlayerPanel startGame={this.startGame} currentPlayer={this.state.currentPlayer}/>
       </div>
     )
   }

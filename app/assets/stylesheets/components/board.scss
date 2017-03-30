@@ -35,6 +35,9 @@
   display: flex;
   min-height: 500px;
   border: 6px solid $peter-river-blue;
+  -moz-box-shadow: 3px 3px 5px 6px #ccc;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+  box-shadow: 3px 3px 5px 6px #ccc;
 }
 
 .board__column {

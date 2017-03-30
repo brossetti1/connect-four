@@ -18,7 +18,7 @@ class Game < ApplicationRecord
 
   after_initialize :initialize_defaults, if: :new_record?
 
-  validates :token_col, presence: true
+  validates :token_col, presence: true, unless: :new_record?
   validate :validate_pick_exists!
 
   def process_move
